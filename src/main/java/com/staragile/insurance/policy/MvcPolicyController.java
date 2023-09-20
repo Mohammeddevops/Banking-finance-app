@@ -22,7 +22,7 @@ public class MvcPolicyController {
 	@Autowired
 	PolicyService policySvc;
 	
-	@RequestMapping("hello")
+	@RequestMapping("mvchello")
 	public String doSomething(){
 		return "Hello World!!!";
 	}
@@ -30,47 +30,41 @@ public class MvcPolicyController {
 	
 	@RequestMapping("/getallpolicy")
 	public String getAllPolicies(HttpServletRequest req, HttpServletResponse res) {
-		/*String name = req.getParameter("name");
-		System.out.println(name);
-		req.getSession().setAttribute("name", name);
-		return "second.jsp";
-		*/
-		
 		List<Policy> policyList = policySvc.getPolicies();
 		req.getSession().setAttribute("policyList", policyList);
-		
 		return "policy.jsp";
 	}
 	
 	
-	@RequestMapping("/policy/{id}")
-	public Optional<Policy> getPolicy(@PathVariable String id){
-		System.out.println("Inside getPolicy");
-		return policySvc.getPolicy(id);
-	}
 	
-	@RequestMapping("/policy")
-	public List<Policy> getPolicies(){
-		return policySvc.getPolicies();
-	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/policy")
-	public String addPolicy(@RequestBody Policy policy) {
+	@RequestMapping("/createpolicy")
+	public String addPolicy(HttpServletRequest req, HttpServletResponse res) {
+		Policy policy = new Policy();
+		policy.setPolicyId(req.getParameter("id"));
+		policy.setCustomerName(req.getParameter("name"));
+		policy.setCustomerAddress(req.getParameter("address"));
+		policy.setContactNumber(req.getParameter("contact"));
 		policySvc.addPolicy(policy);
-		return "Successfully added!!";
+		return getAllPolicies(req,res);
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/policy/{id}")
-	public String updatePolicy(@RequestBody Policy policy, @PathVariable String id) {
-		policySvc.updatePolicy(id, policy);
-		return "Updated successfully";
+	@RequestMapping("/updatepolicy")
+	public String updatePolicy(HttpServletRequest req, HttpServletResponse res) {
+		Policy policy = new Policy();
+		policy.setPolicyId(req.getParameter("id"));
+		policy.setCustomerName(req.getParameter("name"));
+		policy.setCustomerAddress(req.getParameter("address"));
+		policy.setContactNumber(req.getParameter("contact"));
+		policySvc.updatePolicy(req.getParameter("id"),policy);
+		return getAllPolicies(req,res);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/policy/{id}")
-	public String deletePolicy(@PathVariable String id) {
-		policySvc.deletePolicy(id);
-		return "Updated successfully";
+	
+	
+	@RequestMapping("/deletepolicy")
+	public String deletePolicy(HttpServletRequest req, HttpServletResponse res) {
+		policySvc.deletePolicy(req.getParameter("id"));
+		return getAllPolicies(req,res);
 	}
-	
-	
 }
