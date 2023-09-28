@@ -60,7 +60,16 @@ public class MvcPolicyController {
 		return getAllPolicies(req,res);
 	}
 	
-	
+	@RequestMapping("/viewpolicy")
+	public String viewPolicy(HttpServletRequest req, HttpServletResponse res) {
+		Policy policy = new Policy();
+		policy.setPolicyId(req.getParameter("id"));
+		policy.setCustomerName(req.getParameter("name"));
+		policy.setCustomerAddress(req.getParameter("address"));
+		policy.setContactNumber(req.getParameter("contact"));
+		policySvc.viewPolicy(req.getParameter("id"),policy);
+		return getAllPolicies(req,res);
+	}
 	
 	@RequestMapping("/deletepolicy")
 	public String deletePolicy(HttpServletRequest req, HttpServletResponse res) {

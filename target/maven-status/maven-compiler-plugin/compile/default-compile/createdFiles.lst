@@ -1,3 +1,4 @@
+com\staragile\insurance\policy\DatabaseConnection.class
 com\staragile\insurance\policy\PolicyDAORepository.class
 com\staragile\insurance\policy\Policy.class
 com\staragile\insurance\policy\PolicyController.class

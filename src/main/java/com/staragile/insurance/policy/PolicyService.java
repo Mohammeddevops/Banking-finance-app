@@ -41,6 +41,10 @@ public class PolicyService {
 		policyDAORepository.save(policy);
 	}
 	
+	public void viewPolicy(String id, Policy policy) {
+		policyDAORepository.save(policy);
+	}
+	
 	public void deletePolicy(String id) {
 		policyDAORepository.deleteById(id);
 	}
