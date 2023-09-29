@@ -8,5 +8,5 @@ variable "instance_ami" {
 
 }
 variable "keyname" {
-  default = "bitsohio"  
+  default = "dam"  
 }
