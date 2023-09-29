@@ -5,7 +5,7 @@ resource "aws_instance" "jenkins-instance" {
   #user_data = file("install_jenkins.sh")
   associate_public_ip_address = true
   tags = {
-    Name = "Jenkins-Instance"
+    Name = "Prod_server"
   }
   
   ebs_block_device {
