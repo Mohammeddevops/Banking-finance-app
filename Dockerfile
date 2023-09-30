@@ -1,4 +1,9 @@
-FROM tomcat:jdk11
-COPY target/policy-0.0.1-SNAPSHOT.jar /usr/local/tomcat/webapps/
-EXPOSE 8080
-CMD /usr/local/tomcat/bin/catalina.sh run
+FROM maven:3-openjdk-17-slim
+
+WORKDIR /app
+
+# Add the application's jar to the container
+COPY ./target/policy-0.0.1-SNAPSHOT.jar .
+
+#execute the application
+ENTRYPOINT ["java","-jar","policy-0.0.1-SNAPSHOT.jar"]
