@@ -1,7 +1,7 @@
-E:\project1\policy\src\main\java\com\staragile\insurance\policy\PolicyDAORepository.java
-E:\project1\policy\src\main\java\com\staragile\insurance\policy\DatabaseConnection.java
-E:\project1\policy\src\main\java\com\staragile\insurance\policy\Policy.java
-E:\project1\policy\src\main\java\com\staragile\insurance\policy\MvcPolicyController.java
-E:\project1\policy\src\main\java\com\staragile\insurance\policy\PolicyController.java
-E:\project1\policy\src\main\java\com\staragile\insurance\policy\PolicyApplication.java
-E:\project1\policy\src\main\java\com\staragile\insurance\policy\PolicyService.java
+D:\eclipse\Bank-Application\src\main\java\com\staragile\banking\banking\DatabaseConnection.java
+D:\eclipse\Bank-Application\src\main\java\com\staragile\banking\banking\MvcAccountController.java
+D:\eclipse\Bank-Application\src\main\java\com\staragile\banking\banking\AccountService.java
+D:\eclipse\Bank-Application\src\main\java\com\staragile\banking\banking\Account.java
+D:\eclipse\Bank-Application\src\main\java\com\staragile\banking\banking\AccountController.java
+D:\eclipse\Bank-Application\src\main\java\com\staragile\banking\banking\AccountDAORepository.java
+D:\eclipse\Bank-Application\src\main\java\com\staragile\banking\banking\AccountApplication.java
