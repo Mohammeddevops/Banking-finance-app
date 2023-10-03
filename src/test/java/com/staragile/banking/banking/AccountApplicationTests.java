@@ -1,4 +1,4 @@
-package com.staragile.insurance.policy;
+package com.staragile.banking.banking;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
