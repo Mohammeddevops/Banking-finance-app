@@ -65,9 +65,9 @@ function deleteAccount(){
       </tr>
     </thead>
     <tbody>
-      <c:forEach items="${accountList}" var="policy">
+      <c:forEach items="${accountList}" var="account">
         <tr>
-          <td>${account.AccountId}</td>
+          <td>${account.accountId}</td>
           <td>${account.customerName}</td>
           <td>${account.customerAddress}</td>
           <td>${account.contactNumber}</td>

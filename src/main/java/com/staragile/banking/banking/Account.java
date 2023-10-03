@@ -1,8 +1,9 @@
 package com.staragile.banking.banking;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
 
 @Entity
 public class Account {
@@ -13,6 +14,30 @@ public class Account {
 	String customerAddress;
 	String contactNumber;
 	
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return Objects.equals(getAccountId(), account.getAccountId()) &&
+               Objects.equals(getCustomerName(), account.getCustomerName()) &&
+               Objects.equals(getCustomerAddress(), account.getCustomerAddress()) &&
+               Objects.equals(getContactNumber(), account.getContactNumber());
+    }
+	
+	@Override
+	public String toString() {
+	    return "Account ID: " + getAccountId() +
+	           ", Customer Name: " + getCustomerName() +
+	           ", Customer Address: " + getCustomerAddress() +
+	           ", Contact Number: " + getContactNumber();
+	}
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getAccountId(), getCustomerName(), getCustomerAddress(), getContactNumber());
+    }
 	
 	public Account() {
 		super();
